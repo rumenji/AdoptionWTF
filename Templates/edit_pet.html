@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit pet{% endblock %}
+
+{% block content %}
+    <h1>Edit pet: {{ pet.name }}</h1>
+    <img class="img-fluid" src="{{ pet.pet_image() }}">
+    <form action="/{{pet.id}}", method="POST">
+        {% include '_form.html' %}
+        <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+{% endblock %}
